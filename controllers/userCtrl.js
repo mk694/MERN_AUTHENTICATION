@@ -3,11 +3,10 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import sendMail from "./sendMail.js";
 
-const { CLIENT_URL } = process.env;
-
 const userCtrl = {
   register: async (req, res) => {
     try {
+      const { CLIENT_URL } = process.env;
       const { name, email, password } = req.body;
 
       if (!name || !email || !password)
