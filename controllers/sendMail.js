@@ -4,7 +4,7 @@ import { google } from "googleapis";
 const { OAuth2 } = google.auth;
 const OAUTH_PLAYGROUND = "https://developers.google.com/oauthplayground/ ";
 
-const sendEmail = (to, url) => {
+const sendEmail = (to, url, text) => {
   const {
     MAILING_SERVICE_CLIENT_ID,
     MAILING_SERVICE_CLIENT_SECRET,
@@ -43,7 +43,7 @@ const sendEmail = (to, url) => {
     text: "Welcome to your first Google mail API testing",
     html: `
     <div>
-<p>CLick the link below to guide you toward the Homepage</p>
+<p>CLick the link below to guide you toward the ${text}</p>
 <a href=${url}>
     ${url}</a>
 </div>`,

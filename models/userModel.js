@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import express from "express";
 
 const userSchema = new mongoose.Schema(
   {
@@ -13,6 +12,10 @@ const userSchema = new mongoose.Schema(
       required: [true, "Please enter your email!"],
       trim: true,
       unique: true,
+    },
+    password: {
+      type: String,
+      required: [true, "Please enter your password!"],
     },
     role: {
       type: Number,
